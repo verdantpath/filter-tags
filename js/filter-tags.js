@@ -1,7 +1,7 @@
 (function() {
   var $imgs = $('#gallery img');
   var $buttons = $('#buttons');
-  var tagged = [];
+  var tagged = {};
 
   $imgs.each(function() {
     var img = this;
@@ -16,6 +16,8 @@
       });
     }
   });
+
+
 
   $('<button/>', {
     text: 'Show All',
@@ -39,10 +41,12 @@
           .removeClass('active');
         $imgs
           .hide()
-          .filter(tagged[tagged[tagName])
+          .filter(tagged[tagName])
           .show();
       }
     }).appendTo($buttons);
   });
+
+
 
 }());
